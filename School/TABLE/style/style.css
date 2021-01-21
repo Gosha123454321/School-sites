@@ -1,0 +1,17 @@
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+.sport {
+	margin: 10px;
+	text-align: center; 
+	
+}
+
+th, td {
+	padding: 2px 5px;
+}
+
+.left {
+	text-align: left;
+}
