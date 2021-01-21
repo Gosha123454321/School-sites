@@ -1,7 +1,10 @@
 body {
 	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
 }
 
+/* First table
+==============*/
 .sport {
 	margin: 10px;
 	text-align: center; 
@@ -15,3 +18,55 @@ th, td {
 .left {
 	text-align: left;
 }
+
+/*Second table
+==============*/
+.header {
+	background: url('../images/back.jpg');
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+}
+
+.picture {
+	text-align: center;
+	background: url('../images/paper.jpg');
+	padding: 10px;
+}
+
+.picturey {
+	width: 120px;
+}
+
+.note {
+	font-family: 'Arial', 'Helvetica', sans-serif;
+	color: #800000;
+	text-align: center;
+	padding: 5px 10px;
+}
+
+/*Third table
+==============*/
+.img {
+	vertical-align: top;
+}
+
+.text {
+	text-align: justify;
+}
+
+.ad {
+	border: 1px solid #CCCCCC;
+	background: rgb(230,230,255); 
+	text-align: center;
+	vertical-align: top;
+	padding: 5px;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+
+
