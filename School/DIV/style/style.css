@@ -1,0 +1,49 @@
+* {
+	margin:0px;
+	padding:0px;
+}	
+
+.header {
+	height: 80px;
+	background: url('../images/header.jpg') no-repeat ;
+}
+
+h1 {
+  	line-height:80px;
+  	padding-left: 200px; 
+}
+
+p {
+	text-indent: 20px;
+	margin: 5px; 
+}
+
+.wiki {
+	text-align: right;
+	text-decoration: none;
+}
+
+.pogoda {
+	width: 140px;
+	margin-left: 10px;
+	float: left;
+}
+
+.photo {
+	width: 220px;
+	margin-left: 10px;
+	float: right;
+}
+
+.content {
+	margin-left: 140px;
+	margin-right: 220px; 
+}
+
+.footer {
+	background: #CCCCCC;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	text-align: center;
+	clear: both;
+}
