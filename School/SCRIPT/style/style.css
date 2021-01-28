@@ -1,0 +1,59 @@
+body {
+	background: #fff;
+	font-family: 'Bodoni Moda', serif;
+	font-size: 16px;
+}
+
+h1 {
+	font-size: 36px;
+}
+
+p {
+	margin-top: 5px;
+}
+
+.img {
+	display: inline-block;
+	background: url('../images/valaam_gray.gif');
+	width: 93px;
+	height: 18px;
+}
+
+.img:hover {
+	background: url('../images/valaam.gif'); 
+}
+
+.cover {
+	width: 300px;
+	float: left;
+	margin-right: 10px; 
+}
+ 
+.disc {
+	font-style: italic;
+	font-size: 15px;
+	text-align: center;
+	margin: 0;
+	font-family: 'Bodoni Moda', sans-serif;
+}
+
+.main_block {
+	margin: 0;
+	overflow: auto;
+}
+
+.hover_block {
+	border: 1px solid blue;
+	background: #EEEEFF; 
+	padding: 10px;
+}
+
+.block-wrapper {
+	overflow: auto; 
+}
+
+.hover_img {
+	width: 200px;
+	float: right;
+	margin-left: 10px;
+}
