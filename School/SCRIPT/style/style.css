@@ -51,6 +51,7 @@ a {
 	background: #EEEEFF; 
 	padding: 10px;
 	display: none;
+	position: relative;
 }
 
 .block-wrapper {
@@ -65,6 +66,8 @@ a {
 
 .svernut {
 	margin-top: 10px; 
+	position: absolute;
+	bottom: 10px;
 }
 
 .forms {

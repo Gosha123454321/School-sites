@@ -27,11 +27,13 @@ document.addEventListener ('DOMContentLoaded', function (){
 	form.addEventListener ('submit', function (event) {
 		event.preventDefault()
 	 	let input = document.getElementById('forms_input')
-	 	if (input.value = 'Сортавала'){
+	 	if (input.value == 'Сортавала'){
 	 		alert ('Правильно')
 	 	}else{
 	 		alert ('Неправильно')
 	 	}
 	})
+
 })
+
 
