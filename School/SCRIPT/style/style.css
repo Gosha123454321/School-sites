@@ -12,6 +12,10 @@ p {
 	margin-top: 5px;
 }
 
+a {
+	text-decoration: none;
+}
+
 .img {
 	display: inline-block;
 	background: url('../images/valaam_gray.gif');
@@ -46,6 +50,7 @@ p {
 	border: 1px solid blue;
 	background: #EEEEFF; 
 	padding: 10px;
+	display: none;
 }
 
 .block-wrapper {
@@ -56,4 +61,12 @@ p {
 	width: 200px;
 	float: right;
 	margin-left: 10px;
+}
+
+.svernut {
+	margin-top: 10px; 
+}
+
+.forms {
+	margin-top: 20px;
 }
