@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', function(){
-
+document.addEventListener ('DOMContentLoaded', function (){
 	let form = document.getElementById('form')
 
 	form.addEventListener('submit', function (event){
@@ -9,14 +8,15 @@ document.addEventListener('DOMContentLoaded', function(){
 		number = Number.parseInt(number)
 
 		const div = document.getElementById('change')
-		div.innerHTML = ""
+		div.innerHTML = ' '
 
 		let isRepeat = false
 
 		while (number != 0){
-			if (number % 10 === Math.floor(n / 10) % 10){
+			if (number % 10 === Math.floor(number / 10) % 10){
 				isRepeat = true
 			}
+			number = Math.floor (number / 10)
 		}	
 		if (isRepeat){
 			div.innerHTML = "Встречается"
