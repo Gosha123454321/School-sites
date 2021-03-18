@@ -1,127 +1,101 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<title>Комбинаторные задачи</title>
 	<link rel="stylesheet" type="text/css" href="./style/style.css">
 </head>
+
 <body>
 	<div class="container">
 		<h1>Комбинаторные задачи</h1>
+		<hr>
 
-		<bold>Диапазон длины слова: </bold>
-		<form class="inf">
-			<p>От: <input type="text"></p>
-			<p>До: <input type="text"> <input type="submit"></p>	
-		</form>
+		<form id="selectParameters">
+			<div class="row">
+				<div class="parameters">
+					<p>Диапазон длины слова:</p>
+					<p>От: <input type="text" id="minLength"></p>
+					<p>До: <input type="text" id="maxLength"></p>
+				</div>
 
-		<bold>Диапазон количества букв: </bold>
-		<form class="inf">	
-			<p>От: <input type="text"></p>
-			<p>До: <input type="text"> <input type="submit"></p>	
-		</form>
+				<div class="parameters">
+					<p>Диапазон количества букв:</p>
+					<p>От: <input type="text" id="minCountLetters"></p>
+					<p>До: <input type="text" id="maxCountLetters"></p>
+				</div>
 
-		<bold>Длина слова: </bold>
-		<form class="inf">	
-			<p>От: <input type="text"></p>
-			<p>До: <input type="text"> <input type="submit"></p>	
-		</form>
+				<div class="parameters">
+					<p>Место слова:</p>
+					<p>От: <input type="text" id="minLengthThirdType"></p>
+					<p>До: <input type="text" id="maxLengthThirdType"></p>
+				</div>
+			</div>
 
-		<h2>Выберите тип задачи:</h2>
+			<h2>Выберите тип задачи:</h2>
 
-		<form class="inf">
-			<bold>Количество задач 1 типа: </bold>
-			<input type="text">
-			<input type="submit">
-		</form>
-
-		<form>
-			<p><input type="radio" name="type"> Первый тип </p>
+			<p class="countTypes">
+				Количество задач 1 типа: <input type="text">
+			</p>
+			<p><input type="checkbox" name="type"> Первый тип </p>
 
 			<details>
-				<summary>Пример задания</summary>
-				<p>
-				<table>
-					<td>
-						<p>
-							<pre>
-Все 4-буквенные слова, составленные из букв К, Л, Р, Т, записаны в алфавитном порядке и пронумерованы. Вот начало списка:
-1. КККК
-2. КККЛ
-3. КККР
-4. КККТ
-……
-Запишите слово, которое стоит на 67-м месте от начала списка. 
-						</pre>
-							
-						</p>
-					</td>
-				</table>
-			</p>
+				<summary>Показать пример задания</summary>
+				<div class="example">
+					<p>Все 4-буквенные слова, составленные из букв К, Л, Р, Т, записаны в алфавитном порядке и
+						пронумерованы.</p>
+					<p>Вот начало списка:</p>
+					<p>1. КККК</p>
+					<p>2. КККЛ</p>
+					<p>3. КККР</p>
+					<p>4. КККТ</p>
+					<p>……</p>
+					<p>Запишите слово, которое стоит на 67-м месте от начала списка. </p>
+				</div>
 			</details>
 
-			
-
-			<form class="inf">
-				<bold>Количество задач 2 типа: </bold>
-				<input type="text">
-				<input type="submit">
-			</form>
-
-			<p><input type="radio" name="type"> Второй тип </p>
-			<details>
-				<summary>Пример задания</summary>
-				<p>
-				<table>
-					<td>
-						<p>
-							<pre>
-Все 5-буквенные слова, составленные из 5 букв А, К, Л, О, Ш, записаны в алфавитном порядке.
-Вот начало списка:
-1. ААААА
-2. ААААК
-3. ААААЛ
-4. ААААО
-5. ААААШ
-6. АААКА
-……
-На каком месте от начала списка стоит слово ШКОЛА? 
-
-						</pre>
-							
-						</p>
-					</td>
-				</table>
+			<p class="countTypes">
+				Количество задач 2 типа: <input type="text">
 			</p>
+
+			<p><input type="checkbox" name="type"> Второй тип </p>
+
+			<details>
+				<summary>Показать пример задания</summary>
+				<div class="example">
+					<p>Все 5-буквенные слова, составленные из 5 букв А, К, Л, О, Ш, записаны в алфавитном порядке.</p>
+					<p>Вот начало списка:</p>
+					<p>1. ААААА</p>
+					<p>2. ААААК</p>
+					<p>3. ААААЛ</p>
+					<p>4. ААААО</p>
+					<p>5. ААААШ</p>
+					<p>6. АААКА</p>
+					<p>……</p>
+					<p>На каком месте от начала списка стоит слово ШКОЛА?</p>
+				</div>
 			</details>
-			
 
-			<form class="inf">
-				<bold>Количество задач 3 типа: </bold>
-				<input type="text">
-				<input type="submit">
-			</form>
-
-			<p><input type="radio" name="type"> Третий тип </p>
-			
-			<details>
-				<summary>Пример задания</summary>
-				<p>
-				<table>
-					<td>
-						<p>
-							Сколько слов длины 5, начинающихся с гласной буквы, можно составить из букв Е, Г, Э? Каждая буква может входить в слово несколько раз. Слова не обязательно должны быть осмысленными словами русского языка.
-						</p>
-					</td>
-				</table>
+			<p class="countTypes">
+				Количество задач 3 типа: <input type="text">
 			</p>
-			</details> 
 
-			
+			<p><input type="checkbox" name="type"> Третий тип </p>
 
+			<details>
+				<summary>Показать пример задания</summary>
+				<div class="example">
+					<p>Сколько слов длины 5, начинающихся с гласной буквы, можно составить из букв Е, Г, Э? Каждая
+						буква может входить в слово несколько раз. Слова не обязательно должны быть осмысленными
+						словами русского языка.</p>
+				</div>
+			</details>
+
+			<button id="doGenerate">Сгенерировать</button>
 		</form>
-		<button>Сгенерировать</button>
 	</div>
 	<script type="text/javascript" src="./script/index.js"></script>
 </body>
+
 </html>
