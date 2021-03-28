@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	let container = document.getElementById('change')
 
-	for (let i = 0; i <= 5000; i++) {
+	for (let i = 0; i <= 10; i++) {
 		let data = getData()
 		let text = generateText(data)
 

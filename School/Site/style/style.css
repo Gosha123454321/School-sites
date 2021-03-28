@@ -1,12 +1,11 @@
 body {
 	font-size: 14px;
-
 }
 
 .row {
     display: flex;
     justify-content: space-between;
-}
+} 
 
 .parameters {
 	width: 33%;
@@ -28,4 +27,16 @@ body {
 
 button {
 	margin-top: 10px;
+}
+
+.attention {
+	color: red;
+}
+
+.resultTask {
+	width: 50%;
+	border: 1px solid #000;
+	background: #d2d2d2;
+	padding: .5%;
+	margin-top: 5px;
 }

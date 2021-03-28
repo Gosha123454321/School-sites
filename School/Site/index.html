@@ -16,29 +16,49 @@
 			<div class="row">
 				<div class="parameters">
 					<p>Диапазон длины слова:</p>
+					<!-- Параметры:  от 3 до 8 -->
 					<p>От: <input type="text" id="minLength"></p>
 					<p>До: <input type="text" id="maxLength"></p>
+
+					<div id="attentionInputParametersFirst">
+
+					</div>
 				</div>
 
 				<div class="parameters">
 					<p>Диапазон количества букв:</p>
+					<!-- Параметры:  -->
 					<p>От: <input type="text" id="minCountLetters"></p>
 					<p>До: <input type="text" id="maxCountLetters"></p>
+
+					<div id="attentionInputParametersSecond">
+
+					</div>
 				</div>
 
 				<div class="parameters">
 					<p>Место слова:</p>
-					<p>От: <input type="text" id="minLengthThirdType"></p>
-					<p>До: <input type="text" id="maxLengthThirdType"></p>
+					<!-- Параметры:  -->
+					<p>От: <input type="text" id="minPlaceWord"></p>
+					<p>До: <input type="text" id="maxPlaceWord"></p>
+
+					<div id="attentionInputParametersThird">
+
+					</div>
 				</div>
+
 			</div>
 
 			<h2>Выберите тип задачи:</h2>
 
 			<p class="countTypes">
-				Количество задач 1 типа: <input type="text">
+				Количество задач 1 типа:
+				<input type="text" id="countFirstType">
 			</p>
-			<p><input type="checkbox" name="type"> Первый тип </p>
+
+			<div id="attentionInputCountFirst">
+
+			</div>
 
 			<details>
 				<summary>Показать пример задания</summary>
@@ -56,10 +76,13 @@
 			</details>
 
 			<p class="countTypes">
-				Количество задач 2 типа: <input type="text">
+				Количество задач 2 типа:
+				<input type="text" id="countSecondType">
 			</p>
 
-			<p><input type="checkbox" name="type"> Второй тип </p>
+			<div id="attentionInputCountSecond">
+
+			</div>
 
 			<details>
 				<summary>Показать пример задания</summary>
@@ -78,10 +101,13 @@
 			</details>
 
 			<p class="countTypes">
-				Количество задач 3 типа: <input type="text">
+				Количество задач 3 типа:
+				<input type="text" id="countThirdType">
 			</p>
 
-			<p><input type="checkbox" name="type"> Третий тип </p>
+			<div id="attentionInputCountThird">
+
+			</div>
 
 			<details>
 				<summary>Показать пример задания</summary>
@@ -94,6 +120,11 @@
 
 			<button id="doGenerate">Сгенерировать</button>
 		</form>
+
+		<div id="result">
+
+		</div>
+
 	</div>
 	<script type="text/javascript" src="./script/index.js"></script>
 </body>
