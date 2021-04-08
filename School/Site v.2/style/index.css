@@ -14,6 +14,9 @@ html, body {
 	height: 100%;
 }
 
+/* Intro
+========*/
+
 .inner-content {
 	display: flex;
 	align-items: center;
@@ -21,22 +24,19 @@ html, body {
 	height: 100%;
 }
 
-/* Intro
-========*/
-
 .intro {
 	text-align: center;
 	text-transform: uppercase;
 }
 
 h1 {
-	font-size: 60px;
+	font-size: 70px;
 	text-transform: uppercase;
 	margin: 0;
 }
 
 .intro__underTitle {
-	font-size: 50px;
+	font-size: 60px;
 	margin: 10px;
 }
 
@@ -52,6 +52,75 @@ h1 {
 }
 
 .intro__button:hover {
+	color: #2196f3;
+	background: white;
+}
+
+/* content__parameters
+=====================*/
+
+.content__parameters {
+	height: 100%;
+}
+
+.content__title {
+	color: #fff;
+	text-decoration: none;
+	font-size: 70px;
+	text-transform: uppercase;
+	padding-left: 30px;
+}
+
+hr {
+	height: 2px;
+	border: none;
+    background-color:#fff;
+    color: #fff;
+}
+
+.row {
+    display: flex;
+	padding: 30px;
+}  
+
+.content__example {
+	margin: 5px;
+	padding: 10px;
+	width: 50%;
+	border: 2px solid #fff;
+	font-size: 30px;
+} 
+
+.parameters__button {
+	border: 1px solid #fff;
+    padding: 5px 15px; 
+    margin: 10px;
+    text-decoration: none;
+    font-size: 30px;
+    color: #fff; 
+    /* display: inline-block; */
+    transition: background .2s linear, color .2s linear;
+	margin-left: 30px;
+}
+
+.content__input {
+	font-size: 30px;
+	width: 50%;
+	padding-left: 20px;
+}
+
+.header__input{
+	font-size: 35px;
+}
+
+
+input {
+	height: 30px;
+	width: 150px;
+	font-size: 20px;
+}
+
+.parameters__button:hover {
 	color: #2196f3;
 	background: white;
 }
