@@ -26,17 +26,16 @@ document.addEventListener('DOMContentLoaded', function () {
 			countTasks: 0
 		}
 	}
-	let firstType__attentionLenght = document.getElementById('firstType__attentionLenght')
-	firstType__attentionLenght.innerHTML = ""
+
 	document.getElementById('firstType__minLenght').addEventListener('change', event => {
 		// console.log(event.target.value)
 		if (event.target.value > 0) {
 			console.log(data.firstType)
 			data.firstType.minLength = event.target.value
 			console.log(data.firstType)
-			firstType__attentionLenght.innerHTML = ""
+			
 		} else {
-			firstType__attentionLenght.innerHTML += "Vvedi drugoe"
+			
 		}
 	})
 
@@ -65,16 +64,20 @@ document.addEventListener('DOMContentLoaded', function () {
 	firstType_nextButton.addEventListener('click', function (event) {
 		event.preventDefault()
 
-		data.firstType.minLength = document.getElementById('firstType__minLenght').value
-		data.firstType.maxLength = document.getElementById('firstType__maxLenght').value
+		let isChoice = document.getElementById('isChoice').querySelector('input')
+		if (isChoice.checked){
+			data.firstType.minLength = document.getElementById('firstType__minLenght').value
+			data.firstType.maxLength = document.getElementById('firstType__maxLenght').value
 
-		data.firstType.minCountLetters = document.getElementById('firstType__minCountLetters').value
-		data.firstType.maxCountLetters = document.getElementById('firstType__maxCountLetters').value
+			data.firstType.minCountLetters = document.getElementById('firstType__minCountLetters').value
+			data.firstType.maxCountLetters = document.getElementById('firstType__maxCountLetters').value
 
-		data.firstType.minPlaceWord = document.getElementById('firstType__minPlaceWord').value
-		data.firstType.maxPlaceWord = document.getElementById('firstType__maxPlaceWord').value
+			data.firstType.minPlaceWord = document.getElementById('firstType__minPlaceWord').value
+			data.firstType.maxPlaceWord = document.getElementById('firstType__maxPlaceWord').value
 
-		data.firstType.countTasks = document.getElementById('firstType__countTasks').value
+			data.firstType.countTasks = document.getElementById('firstType__countTasks').value
+		}
+		
 
 		// console.log(data.firstType)
 		// // Проверка вводимых значения для первого типа

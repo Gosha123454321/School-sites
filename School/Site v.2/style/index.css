@@ -61,7 +61,7 @@ h1 {
 
 .content__parameters {
 	height: 100%;
-	display: none;
+	display: flex;
 	flex-direction: column;
 }
 
@@ -113,24 +113,26 @@ hr {
 .content__input {
 	font-size: 30px;
 	width: 40%;
-	
 }
 
 .header__input{
 	font-size: 35px;
 }
 
-
-input {
+.inputParameters {
 	height: 30px;
 	width: 150px;
 	font-size: 20px;
 	margin-right: 10px;
 }
 
+.inputChoice {
+	height: 30px;
+	width: 30px;
+}
+
 .row__input {
 	display: flex;
-	
 }
 
 .firstType__attentionLenght {
@@ -185,9 +187,8 @@ input {
 ========*/
 
 .content__result{
-	display: none;
+	display: flex;
 }
-
 
 
 

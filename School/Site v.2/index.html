@@ -10,6 +10,7 @@
 		rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="./style/index.css">
+	<link rel="stylesheet" type="text/css" href="./style/adapt.css">
 </head>
 
 <body>
@@ -47,28 +48,35 @@
 					<p class="header__input">Необходимые параметры</p>
 					<p>Длина слова</p>
 					<div class="row__input" id="">
-						<input type="number" id="firstType__minLenght" placeholder="От">
-						<input type="number" id="firstType__maxLenght" placeholder="До">
-						<div class="firstType__attentionLenght" id="firstType__attentionLenght"></div>
+						<input class="inputParameters" type="number" id="firstType__minLenght" placeholder="От" min="" max="">
+						<input class="inputParameters" type="number" id="firstType__maxLenght" placeholder="До"  min="" max="">
 					</div>
 
 					<p>Количество букв</p>
-					<p>
-						<input type="number" id="firstType__minCountLetters" placeholder="От">
-						<input type="number" id="firstType__maxCountLetters" placeholder="До">
-					</p>
-					<p>Место слова</p>
-					<p>
-						<input type="number" id="firstType__minPlaceWord" placeholder="От">
-						<input type="number" id="firstType__maxPlaceWord" placeholder="До">
-					</p>
-					<p>Количество задач</p>
-					<p>
-						<input type="number" id="firstType__countTasks">
-					</p>
-				</div>
+					<div class="row__input" id="">
+						<input class="inputParameters" type="number" id="firstType__minCountLetters" placeholder="От" min="" max="">
+						<input class="inputParameters" type="number" id="firstType__maxCountLetters" placeholder="До" min="" max="">
+					</div>
 
+					<p>Место слова</p>
+					<div class="row__input" id="">
+						<input class="inputParameters" type="number" id="firstType__minPlaceWord" placeholder="От" min="" max="">
+						<input class="inputParameters" type="number" id="firstType__maxPlaceWord" placeholder="До" min="" max="">
+					</div>
+
+					<p>Количество задач</p>
+					<div class="row__input" id="">
+						<input class="inputParameters" type="number" id="firstType__countTasks" min="" max="">
+					</div>
+
+					<div class="row__input" id="isChoice">
+						<input class="inputChoice" type="checkbox" name="" min="" max="">
+						Выбрать эту задачу
+					</div>
+
+				</div>
 			</div>
+
 			<div class="parameters__nav">
 				<div class="switchers">
 					<div class="firstSwitcher" id="firstSwitcher"></div>
@@ -111,17 +119,17 @@
 					<p class="header__input">Необходимые параметры</p>
 					<p>Длина слова</p>
 					<p>
-						<input type="number" name="" id="" placeholder="От">
-						<input type="number" name="" id="" placeholder="До">
+						<input class="inputParameters" type="number" name="" id="" placeholder="От" min="" max="">
+						<input class="inputParameters" type="number" name="" id="" placeholder="До" min="" max="">
 					</p>
 					<p>Количество букв</p>
 					<p>
-						<input type="number" name="" id="" placeholder="От">
-						<input type="number" name="" id="" placeholder="До">
+						<input class="inputParameters" type="number" name="" id="" placeholder="От" min="" max="">
+						<input class="inputParameters" type="number" name="" id="" placeholder="До" min="" max="">
 					</p>
 					<p>Количество задач</p>
 					<p>
-						<input type="number" name="" id="">
+						<input class="inputParameters" type="number" name="" id="" min="" max="">
 					</p>
 				</div>
 
@@ -169,17 +177,17 @@
 					<p class="header__input">Необходимые параметры</p>
 					<p>Длина слова</p>
 					<p>
-						<input type="number" name="" id="" placeholder="От">
-						<input type="number" name="" id="" placeholder="До">
+						<input class="inputParameters" type="number" name="" id="" placeholder="От" min="" max="">
+						<input class="inputParameters" type="number" name="" id="" placeholder="До" min="" max="">
 					</p>
 					<p>Количество букв</p>
 					<p>
-						<input type="number" name="" id="" placeholder="От">
-						<input type="number" name="" id="" placeholder="До">
+						<input class="inputParameters" type="number" name="" id="" placeholder="От" min="" max="">
+						<input class="inputParameters" type="number" name="" id="" placeholder="До" min="" max="">
 					</p>
 					<p>Количество задач</p>
 					<p>
-						<input type="number" name="" id="">
+						<input class="inputParameters" type="number" name="" id="" min="" max="">
 					</p>
 				</div>
 
