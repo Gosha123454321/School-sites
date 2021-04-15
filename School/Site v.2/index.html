@@ -14,7 +14,7 @@
 
 <body>
 
-	<div class="inner-content">
+	<div class="inner-content" id="divIntro">
 		<div class="intro">
 			<h1>Комбинаторные задачи</h1>
 			<p class="intro__underTitle">Восьмое задание ЕГЭ</p>
@@ -23,102 +23,126 @@
 	</div>
 
 	<!-- Первый тип  -->
-	<div class="content__parameters">
-		<div class="content__header">
-			<a href="#" class="content__title">Комбинаторные задачи</a>
+	<div class="content__parameters" id="firstTypeDiv">
+		<div class="content__container">
+			<div class="content__header">
+				<a href="#" class="content__title" id="title">Комбинаторные задачи</a>
+			</div>
 		</div>
 		<hr>
+		<div class="content__container">
+			<div class="row">
+				<div class="content__example">
+					<p>Все 4-буквенные слова, составленные из букв К, Л, Р, Т, записаны в алфавитном порядке и
+						пронумерованы.</p>
+					<p>Вот начало списка:</p>
+					<p>1. КККК</p>
+					<p>2. КККЛ</p>
+					<p>3. КККР</p>
+					<p>4. КККТ</p>
+					<p>……</p>
+					<p>Запишите слово, которое стоит на 67-м месте от начала списка. </p>
+				</div>
+				<div class="content__input">
+					<p class="header__input">Необходимые параметры</p>
+					<p>Длина слова</p>
+					<div class="row__input" id="">
+						<input type="number" id="firstType__minLenght" placeholder="От">
+						<input type="number" id="firstType__maxLenght" placeholder="До">
+						<div class="firstType__attentionLenght" id="firstType__attentionLenght"></div>
+					</div>
 
-		<div class="row">
-			<div class="content__example">
-				<p>Все 4-буквенные слова, составленные из букв К, Л, Р, Т, записаны в алфавитном порядке и
-					пронумерованы.</p>
-				<p>Вот начало списка:</p>
-				<p>1. КККК</p>
-				<p>2. КККЛ</p>
-				<p>3. КККР</p>
-				<p>4. КККТ</p>
-				<p>……</p>
-				<p>Запишите слово, которое стоит на 67-м месте от начала списка. </p>
+					<p>Количество букв</p>
+					<p>
+						<input type="number" id="firstType__minCountLetters" placeholder="От">
+						<input type="number" id="firstType__maxCountLetters" placeholder="До">
+					</p>
+					<p>Место слова</p>
+					<p>
+						<input type="number" id="firstType__minPlaceWord" placeholder="От">
+						<input type="number" id="firstType__maxPlaceWord" placeholder="До">
+					</p>
+					<p>Количество задач</p>
+					<p>
+						<input type="number" id="firstType__countTasks">
+					</p>
+				</div>
+
 			</div>
-			<div class="content__input">
-				<p class="header__input">Необходимые параметры</p>
-				<p>Длина слова</p>
-				<p>
-					<input type="number" id="firstType__minLenght" placeholder="От">
-					<input type="number" id="firstType__maxLenght" placeholder="До">
-				</p>
-				<p>Количество букв</p>
-				<p>
-					<input type="number" id="firstType__minCountLetters" placeholder="От">
-					<input type="number" id="firstType__maxCountLetters" placeholder="До">
-				</p>
-				<p>Место слова</p>
-				<p>
-					<input type="number" id="firstType__minPlaceWord" placeholder="От">
-					<input type="number" id="firstType__maxPlaceWord" placeholder="До">
-				</p>
-				<p>Количество задач</p>
-				<p>
-					<input type="number" id="firstType__countTasks">
-				</p>
+			<div class="parameters__nav">
+				<div class="switchers">
+					<div class="firstSwitcher" id="firstSwitcher"></div>
+					<div class="secondSwitcher" id="secondSwitcher"></div>
+					<div class="thirdSwitcher" id="thirdSwitcher"></div>
+				</div>
+				<div class="nextButton">
+					<a href="#" class="parameters__button" id="firstType_nextButton">
+						Следующая задача &gt;
+					</a>
+				</div>
 			</div>
-
 		</div>
-		<div class="parameters__nav">
-			<a href="#" class="parameters__button" id="firstType_nextTask">
-				Следующая задача &gt;
-			</a>
-		</div>
-
 	</div>
 
 	<!-- Второй тип  -->
 	<div class="content__parameters">
-		<div class="content__header">
-			<a href="#" class="content__title">Комбинаторные задачи</a>
+		<div class="content__container">
+			<div class="content__header">
+				<a href="#" class="content__title" id="title">Комбинаторные задачи</a>
+			</div>
 		</div>
 		<hr>
 
-		<div class="row">
-			<div class="content__example">
-				<p>Все 5-буквенные слова, составленные из 5 букв А, К, Л, О, Ш, записаны в алфавитном порядке.</p>
-				<p>Вот начало списка:</p>
-				<p>1. ААААА</p>
-				<p>2. ААААК</p>
-				<p>3. ААААЛ</p>
-				<p>4. ААААО</p>
-				<p>5. ААААШ</p>
-				<p>6. АААКА</p>
-				<p>……</p>
-				<p>На каком месте от начала списка стоит слово ШКОЛА?</p>
-			</div>
-			<div class="content__input">
-				<p class="header__input">Необходимые параметры</p>
-				<p>Длина слова</p>
-				<p>
-					<input type="number" name="" id="" placeholder="От">
-					<input type="number" name="" id="" placeholder="До">
-				</p>
-				<p>Количество букв</p>
-				<p>
-					<input type="number" name="" id="" placeholder="От">
-					<input type="number" name="" id="" placeholder="До">
-				</p>
-				<p>Количество задач</p>
-				<p>
-					<input type="number" name="" id="">
-				</p>
-			</div>
+		<div class="content__container">
+			<div class="row">
+				<div class="content__example">
+					<p>Все 5-буквенные слова, составленные из 5 букв А, К, Л, О, Ш, записаны в алфавитном порядке.</p>
+					<p>Вот начало списка:</p>
+					<p>1. ААААА</p>
+					<p>2. ААААК</p>
+					<p>3. ААААЛ</p>
+					<p>4. ААААО</p>
+					<p>5. ААААШ</p>
+					<p>6. АААКА</p>
+					<p>……</p>
+					<p>На каком месте от начала списка стоит слово ШКОЛА?</p>
+				</div>
+				<div class="content__input">
+					<p class="header__input">Необходимые параметры</p>
+					<p>Длина слова</p>
+					<p>
+						<input type="number" name="" id="" placeholder="От">
+						<input type="number" name="" id="" placeholder="До">
+					</p>
+					<p>Количество букв</p>
+					<p>
+						<input type="number" name="" id="" placeholder="От">
+						<input type="number" name="" id="" placeholder="До">
+					</p>
+					<p>Количество задач</p>
+					<p>
+						<input type="number" name="" id="">
+					</p>
+				</div>
 
-		</div>
-		<div class="parameters__nav">
-			<a href="#" class="parameters__button">
-				&lt; Предыдущая задача
-			</a>
-			<a href="#" class="parameters__button">
-				Следующая задача &gt;
-			</a>
+			</div>
+			<div class="parameters__nav">
+				<div class="previousButton">
+					<a href="#" class="parameters__button">
+						&lt; Предыдущая задача
+					</a>
+				</div>
+				<div class="switchers">
+					<div class="firstSwitcher"></div>
+					<div class="secondSwitcher"></div>
+					<div class="thirdSwitcher"></div>
+				</div>
+				<div class="nextButton">
+					<a href="#" class="parameters__button">
+						Следующая задача &gt;
+					</a>
+				</div>
+			</div>
 		</div>
 
 	</div>
@@ -126,51 +150,69 @@
 
 	<!-- Третий тип  -->
 	<div class="content__parameters">
-		<div class="content__header">
-			<a href="#" class="content__title">Комбинаторные задачи</a>
+		<div class="content__container">
+			<div class="content__header">
+				<a href="#" class="content__title" id="title">Комбинаторные задачи</a>
+			</div>
 		</div>
 		<hr>
 
-		<div class="row">
-			<div class="content__example">
-				<p>Сколько слов длины 5, начинающихся с гласной буквы, можно составить из букв Е, Г, Э? Каждая буква
-					может входить в слово несколько раз. Слова не обязательно должны быть осмысленными словами русского
-					языка.</p>
-			</div>
-			<div class="content__input">
-				<p class="header__input">Необходимые параметры</p>
-				<p>Длина слова</p>
-				<p>
-					<input type="number" name="" id="" placeholder="От">
-					<input type="number" name="" id="" placeholder="До">
-				</p>
-				<p>Количество букв</p>
-				<p>
-					<input type="number" name="" id="" placeholder="От">
-					<input type="number" name="" id="" placeholder="До">
-				</p>
-				<p>Количество задач</p>
-				<p>
-					<input type="number" name="" id="">
-				</p>
-			</div>
+		<div class="content__container">
+			<div class="row">
+				<div class="content__example">
+					<p>Сколько слов длины 5, начинающихся с гласной буквы, можно составить из букв Е, Г, Э? Каждая буква
+						может входить в слово несколько раз. Слова не обязательно должны быть осмысленными словами
+						русского
+						языка.</p>
+				</div>
+				<div class="content__input">
+					<p class="header__input">Необходимые параметры</p>
+					<p>Длина слова</p>
+					<p>
+						<input type="number" name="" id="" placeholder="От">
+						<input type="number" name="" id="" placeholder="До">
+					</p>
+					<p>Количество букв</p>
+					<p>
+						<input type="number" name="" id="" placeholder="От">
+						<input type="number" name="" id="" placeholder="До">
+					</p>
+					<p>Количество задач</p>
+					<p>
+						<input type="number" name="" id="">
+					</p>
+				</div>
 
-		</div>
-		<div class="parameters__nav">
-			<a href="#" class="parameters__button">
-				&lt; Предыдущая задача
-			</a>
-			<a href="#" class="parameters__button">
-				Сгенерировать
-			</a>
+			</div>
+			<div class="parameters__nav">
+				<a href="#" class="parameters__button">
+					&lt; Предыдущая задача
+				</a>
+				<div class="switchers">
+					<div class="firstSwitcher"></div>
+					<div class="secondSwitcher"></div>
+					<div class="thirdSwitcher"></div>
+				</div>
+				<a href="#" class="parameters__button">
+					Сгенерировать
+				</a>
+			</div>
 		</div>
 
 	</div>
 
-	<div class="content__result">
-		<div class="content__header">
-			<a href="#" class="content__title">Комбинаторные задачи</a>
+	<div class="content__result" id="divResult">
+		<div class="content__container">
+			<div class="content__header">
+				<a href="#" class="content__title" id="title">Комбинаторные задачи</a>
+			</div>
 		</div>
+		<hr>
+		<div class="content__container">
+
+		</div>
+
+	</div>
 	</div>
 
 

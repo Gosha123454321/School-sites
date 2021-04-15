@@ -1,16 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-	
-	document.getElementById('firstType__minLenght').addEventListener('change', event => {
-		console.log(event.target.value)
-	})
-
-	let introButton = document.getElementById('introButton')
-	introButton.addEventListener('click', function (event) {
-		event.preventDefault()
-
-	})
-
-		
 	//Глобальный объект данных
 	//========================
 	let data = {
@@ -38,15 +26,47 @@ document.addEventListener('DOMContentLoaded', function () {
 			countTasks: 0
 		}
 	}
+	let firstType__attentionLenght = document.getElementById('firstType__attentionLenght')
+	firstType__attentionLenght.innerHTML = ""
+	document.getElementById('firstType__minLenght').addEventListener('change', event => {
+		// console.log(event.target.value)
+		if (event.target.value > 0) {
+			console.log(data.firstType)
+			data.firstType.minLength = event.target.value
+			console.log(data.firstType)
+			firstType__attentionLenght.innerHTML = ""
+		} else {
+			firstType__attentionLenght.innerHTML += "Vvedi drugoe"
+		}
+	})
+
+	// Переход: Интро -> Первый тип
+	//=============================
+	let introButton = document.getElementById('introButton')
+	let firstTypeDiv = document.getElementById('firstTypeDiv')
+	let firstSwitcher = document.getElementById('firstSwitcher')
+	introButton.addEventListener('click', function (event) {
+		event.preventDefault()
+		let divIntro = document.getElementById('divIntro')
+		divIntro.style.display = 'none'
+		firstTypeDiv.style.display = 'flex'
+		firstSwitcher.style.background = '#fff'
+	})
+
+
+
+	// ==========  
+	// Первый тип 
+	// ========== 
 
 	// Ввод значений для задач первого типа
 	//=====================================
-	let firstType_nextTask = document.getElementById('firstType_nextTask')
-	firstType_nextTask.addEventListener('click', function(event){
+	let firstType_nextButton = document.getElementById('firstType_nextButton')
+	firstType_nextButton.addEventListener('click', function (event) {
 		event.preventDefault()
 
 		data.firstType.minLength = document.getElementById('firstType__minLenght').value
-		data.firstType.maxLenght = document.getElementById('firstType__maxLenght').value
+		data.firstType.maxLength = document.getElementById('firstType__maxLenght').value
 
 		data.firstType.minCountLetters = document.getElementById('firstType__minCountLetters').value
 		data.firstType.maxCountLetters = document.getElementById('firstType__maxCountLetters').value
@@ -54,10 +74,20 @@ document.addEventListener('DOMContentLoaded', function () {
 		data.firstType.minPlaceWord = document.getElementById('firstType__minPlaceWord').value
 		data.firstType.maxPlaceWord = document.getElementById('firstType__maxPlaceWord').value
 
-		data.firstType.countTasks = document.getElementById('firstType__countTasks').value	
+		data.firstType.countTasks = document.getElementById('firstType__countTasks').value
+
+		// console.log(data.firstType)
+		// // Проверка вводимых значения для первого типа
+		// if (data.firstType.countTasks != 0) {
+		// 	alert('Thats correct')
+		// }
 	})
 
-	
+
+
+
+
+
 
 
 
