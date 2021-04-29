@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
+	let el = document.querySelector(".tabs")
+	let instance = M.Tabs.init(el);
+
+  	$(document).ready(function(){
+    	$('.tabs').tabs();
+  	});
+
 	//Глобальный объект данных
 	//========================
 	let data = {
