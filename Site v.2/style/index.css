@@ -12,6 +12,12 @@ body, html {
     height: 100%;
 }
 
+.fixed-row {
+    margin-bottom: 20px;
+    margin-left: -0.75em;
+    margin-right: -0.75em;
+}
+
 .content-wrapper {
     height: 100%;
     display: flex;
