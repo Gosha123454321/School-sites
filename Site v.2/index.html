@@ -17,117 +17,300 @@
 </head>
 
 <body>
-	<div class="container">
-		<div class="intro center-align" id="introPage">
-			<h1>Комбинаторные задачи</h1>
-			<p class="intro__underTitle flow-text">Восьмое задание ЕГЭ</p>
-			<a class="intro__button flow-text" id="introButton">Начать</a>
-		</div>
-
-		<div id="slideBar" class="hide">
-			<a href="#" class="title flow-text" id="titleInput">Комбинаторные задачи</a>
-			<div class="bar"></div>
-			<!-- Прокрутка -->
-			<div class="row">
-				<ul id="tab-slideBar" class="tabs">
-					<li class="tab col s3">
-						<a href="#firstSlide" class="white-text active">Первый тип</a>
-					</li>
-					<li class="tab col s3">
-						<a href="#secondSlide" class="white-text">Второй тип</a>
-					</li>
-					<li class="tab col s3">
-						<a href="#thirdSlide" class="white-text">Третий тип</a>
-					</li>
-				</ul>
+	<div class="content-wrapper" id="wrapper">
+		<div class="container">
+			<div class="intro center-align" id="introPage">
+				<h1>Комбинаторные задачи</h1>
+				<p class="intro__underTitle flow-text">Восьмое задание ЕГЭ</p>
+				<a class="intro__button flow-text" id="introButton">Начать</a>
 			</div>
 
+			<div id="slideBar" class="hide">
+				<a href="#" class="title flow-text" id="titleInput">Комбинаторные задачи</a>
+				<div class="bar"></div>
+				<!-- Прокрутка -->
+				<div class="row">
+					<ul id="tab-slideBar" class="tabs">
+						<li class="tab col s3">
+							<a href="#firstSlide" class="white-text active">Первый тип</a>
+						</li>
+						<li class="tab col s3">
+							<a href="#secondSlide" class="white-text">Второй тип</a>
+						</li>
+						<li class="tab col s3">
+							<a href="#thirdSlide" class="white-text">Третий тип</a>
+						</li>
+					</ul>
+				</div>
 
-			<!-- Первый тип задач -->
-			<div id="firstSlide" class="col l12">
-				<div class="row flow-text">
-					<div class="col s12 m6 l6 xl6">
-						<div class="exampleTask">
-							<p>Все 4-буквенные слова, составленные из букв К, Л, Р, Т, записаны в алфавитном порядке и
-								пронумерованы.</p>
-							<p>Вот начало списка:</p>
-							<p>1. КККК</p>
-							<p>2. КККЛ</p>
-							<p>3. КККР</p>
-							<p>4. КККТ</p>
-							<p>……</p>
-							<p>Запишите слово, которое стоит на 67-м месте от начала списка. </p>
+
+				<!-- Первый тип задач -->
+				<div id="firstSlide" class="col l12">
+					<div class="row flow-text">
+						<div class="col s12 m6 l6 xl6">
+							<div class="exampleTask">
+								<p>Все 4-буквенные слова, составленные из букв К, Л, Р, Т, записаны в алфавитном порядке
+									и
+									пронумерованы.</p>
+								<p>Вот начало списка:</p>
+								<p>1. КККК</p>
+								<p>2. КККЛ</p>
+								<p>3. КККР</p>
+								<p>4. КККТ</p>
+								<p>……</p>
+								<p>Запишите слово, которое стоит на 67-м месте от начала списка. </p>
+							</div>
 						</div>
-					</div>
-					<div class="col s12 m6 l6 xl6">
-						<p class="header__input">Необходимые параметры</p>
-						<div class="bar"></div>
+						<div class="col s12 m6 l6 xl6">
+							<p class="header__input">Необходимые параметры</p>
+							<div class="bar"></div>
 
-						<p>Длина слова</p>
-						<input class="inputParameters" type="number" id="" placeholder="От" min="3" max="6">
-						<input class="inputParameters" type="number" id="" placeholder="До" min="3" max="6">
+							<p>Длина слова</p>
+							<input class="inputParameters" type="number" id="" placeholder="От" min="3" max="6">
+							<input class="inputParameters" type="number" id="" placeholder="До" min="3" max="6">
 
-						<p>Количество букв</p>
-						<input class="inputParameters" type="number" id="" placeholder="От" min="" max="">
-						<input class="inputParameters" type="number" id="" placeholder="До" min="" max="">
+							<p>Количество букв</p>
+							<input class="inputParameters" type="number" id="" placeholder="От" min="" max="">
+							<input class="inputParameters" type="number" id="" placeholder="До" min="" max="">
 
-						<p>Место слова</p>
-						<input class="inputParameters" type="number" id="" placeholder="От" min="" max="">
-						<input class="inputParameters" type="number" id="" placeholder="До" min="" max="">
+							<p>Место слова</p>
+							<input class="inputParameters" type="number" id="" placeholder="От" min="" max="">
+							<input class="inputParameters" type="number" id="" placeholder="До" min="" max="">
 
-						<p>Количество задач</p>
-						<input class="inputParameters" type="number" name="" placeholder="Количество" id="" min=""
-							max="">
+							<p>Количество задач</p>
+							<input class="inputParameters" type="number" name="" placeholder="Количество" id="" min=""
+								max="">
+
+
+							<div class="row">
+								<div class="col s12 m12 l12 xl12">
+									<div class="choice__button center-align" id="choiceFirstType">Выбрать этот тип</div>
+								</div>
+							</div>
+						</div>
+
 					</div>
 
 				</div>
 
+				<!-- Второй тип задач -->
+				<div id="secondSlide" class="col l12">
+					<div class="row flow-text">
+						<div class="col s12 m6 l6 xl6">
+							<div class="exampleTask">
+								<p>Все 5-буквенные слова, составленные из 5 букв А, К, Л, О, Ш, записаны в алфавитном
+									порядке.
+								</p>
+								<p>Вот начало списка:</p>
+								<p>1. ААААА</p>
+								<p>2. ААААК</p>
+								<p>3. ААААЛ</p>
+								<p>4. ААААО</p>
+								<p>5. ААААШ</p>
+								<p>6. АААКА</p>
+								<p>……</p>
+								<p>На каком месте от начала списка стоит слово ШКОЛА?</p>
+							</div>
+						</div>
+
+						<div class="col s12 m6 l6 xl6">
+							<p class="header__input">Необходимые параметры</p>
+							<div class="bar"></div>
+
+							<p>Длина слова</p>
+							<input class="inputParameters" type="number" name="" id="" placeholder="От" min="" max="">
+							<input class="inputParameters" type="number" name="" id="" placeholder="До" min="" max="">
+
+							<p>Количество букв</p>
+							<input class="inputParameters" type="number" name="" id="" placeholder="От" min="" max="">
+							<input class="inputParameters" type="number" name="" id="" placeholder="До" min="" max="">
+
+							<p>Количество задач</p>
+							<input class="inputParameters" type="number" name="" placeholder="Количество" id="" min=""
+								max="">
+
+							<div class="row">
+								<div class="col s12 m12 l12 xl12">
+									<div class="choice__button center-align" id="choiceSecondType">Выбрать этот тип
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<!-- Третий тип задач -->
+				<div id="thirdSlide" class="col l12">
+					<div class="row flow-text">
+						<div class="col s12 m6 l6 xl6">
+							<div class="exampleTask">
+								<p>Сколько слов длины 5, начинающихся с гласной буквы, можно составить из букв Е, Г, Э?
+									Каждая
+									буква
+									может входить в слово несколько раз. Слова не обязательно должны быть осмысленными
+									словами
+									русского
+									языка.
+								</p>
+							</div>
+						</div>
+
+						<div class="col s12 m6 l6 xl6">
+							<p class="header__input">Необходимые параметры</p>
+							<div class="bar"></div>
+
+							<p>Длина слова</p>
+							<input class="inputParameters" type="number" name="" id="" placeholder="От" min="" max="">
+							<input class="inputParameters" type="number" name="" id="" placeholder="До" min="" max="">
+
+							<p>Количество букв</p>
+							<input class="inputParameters" type="number" name="" id="" placeholder="От" min="" max="">
+							<input class="inputParameters" type="number" name="" id="" placeholder="До" min="" max="">
+
+							<p>Количество задач</p>
+							<input class="inputParameters" type="number" name="" placeholder="Количество" id="" min=""
+								max="">
+
+							<div class="row">
+								<div class="col s12 m12 l12 xl12">
+									<div class="choice__button center-align" id="choiceThirdType">Выбрать этот тип</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col s12 m12 l12 xl12">
+									<div class="choice__button center-align" id="doGenerateButton">Сгенерировать</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 
-			<!-- Второй тип задач -->
-			<div id="secondSlide" class="col l12">
-				<div class="row flow-text">
-					<div class="col s12 m6 l6 xl6">
+			<div class="result hide" id="resultPage">
+				<div class="row">
+					<div class="col s12 m6 l6 xl4">
 						<div class="exampleTask">
-							<p>Все 5-буквенные слова, составленные из 5 букв А, К, Л, О, Ш, записаны в алфавитном
-								порядке.
+							<p>Сколько слов длины 5, начинающихся с гласной буквы, можно составить из букв Е, Г, Э?
+								Каждая
+								буква
+								может входить в слово несколько раз. Слова не обязательно должны быть осмысленными
+								словами
+								русского
+								языка.
 							</p>
-							<p>Вот начало списка:</p>
-							<p>1. ААААА</p>
-							<p>2. ААААК</p>
-							<p>3. ААААЛ</p>
-							<p>4. ААААО</p>
-							<p>5. ААААШ</p>
-							<p>6. АААКА</p>
-							<p>……</p>
-							<p>На каком месте от начала списка стоит слово ШКОЛА?</p>
 						</div>
-					</div>
-
-					<div class="col s12 m6 l6 xl6">
-						<p class="header__input">Необходимые параметры</p>
-						<div class="bar"></div>
-
-						<p>Длина слова</p>
-						<input class="inputParameters" type="number" name="" id="" placeholder="От" min="" max="">
-						<input class="inputParameters" type="number" name="" id="" placeholder="До" min="" max="">
-
-						<p>Количество букв</p>
-						<input class="inputParameters" type="number" name="" id="" placeholder="От" min="" max="">
-						<input class="inputParameters" type="number" name="" id="" placeholder="До" min="" max="">
-
-						<p>Количество задач</p>
-						<input class="inputParameters" type="number" name="" placeholder="Количество" id="" min=""
-							max="">
-
-					</div>
-				</div>
-			</div>
-
-			<!-- Третий тип задач -->
-			<div id="thirdSlide" class="col l12">
-				<div class="row flow-text">
-					<div class="col s12 m6 l6 xl6">
+						<div class="exampleTask">
+							<p>Сколько слов длины 5, начинающихся с гласной буквы, можно составить из букв Е, Г, Э?
+								Каждая
+								буква
+								может входить в слово несколько раз. Слова не обязательно должны быть осмысленными
+								словами
+								русского
+								языка.
+							</p>
+						</div>
+						<div class="exampleTask">
+							<p>Сколько слов длины 5, начинающихся с гласной буквы, можно составить из букв Е, Г, Э?
+								Каждая
+								буква
+								может входить в слово несколько раз. Слова не обязательно должны быть осмысленными
+								словами
+								русского
+								языка.
+							</p>
+						</div>
+						<div class="exampleTask">
+							<p>Сколько слов длины 5, начинающихся с гласной буквы, можно составить из букв Е, Г, Э?
+								Каждая
+								буква
+								может входить в слово несколько раз. Слова не обязательно должны быть осмысленными
+								словами
+								русского
+								языка.
+							</p>
+						</div>
+						<div class="exampleTask">
+							<p>Сколько слов длины 5, начинающихся с гласной буквы, можно составить из букв Е, Г, Э?
+								Каждая
+								буква
+								может входить в слово несколько раз. Слова не обязательно должны быть осмысленными
+								словами
+								русского
+								языка.
+							</p>
+						</div>
+						<div class="exampleTask">
+							<p>Сколько слов длины 5, начинающихся с гласной буквы, можно составить из букв Е, Г, Э?
+								Каждая
+								буква
+								может входить в слово несколько раз. Слова не обязательно должны быть осмысленными
+								словами
+								русского
+								языка.
+							</p>
+						</div>
+						<div class="exampleTask">
+							<p>Сколько слов длины 5, начинающихся с гласной буквы, можно составить из букв Е, Г, Э?
+								Каждая
+								буква
+								может входить в слово несколько раз. Слова не обязательно должны быть осмысленными
+								словами
+								русского
+								языка.
+							</p>
+						</div>
+						<div class="exampleTask">
+							<p>Сколько слов длины 5, начинающихся с гласной буквы, можно составить из букв Е, Г, Э?
+								Каждая
+								буква
+								может входить в слово несколько раз. Слова не обязательно должны быть осмысленными
+								словами
+								русского
+								языка.
+							</p>
+						</div>
+						<div class="exampleTask">
+							<p>Сколько слов длины 5, начинающихся с гласной буквы, можно составить из букв Е, Г, Э?
+								Каждая
+								буква
+								может входить в слово несколько раз. Слова не обязательно должны быть осмысленными
+								словами
+								русского
+								языка.
+							</p>
+						</div>
+						<div class="exampleTask">
+							<p>Сколько слов длины 5, начинающихся с гласной буквы, можно составить из букв Е, Г, Э?
+								Каждая
+								буква
+								может входить в слово несколько раз. Слова не обязательно должны быть осмысленными
+								словами
+								русского
+								языка.
+							</p>
+						</div>
+						<div class="exampleTask">
+							<p>Сколько слов длины 5, начинающихся с гласной буквы, можно составить из букв Е, Г, Э?
+								Каждая
+								буква
+								может входить в слово несколько раз. Слова не обязательно должны быть осмысленными
+								словами
+								русского
+								языка.
+							</p>
+						</div>
+						<div class="exampleTask">
+							<p>Сколько слов длины 5, начинающихся с гласной буквы, можно составить из букв Е, Г, Э?
+								Каждая
+								буква
+								может входить в слово несколько раз. Слова не обязательно должны быть осмысленными
+								словами
+								русского
+								языка.
+							</p>
+						</div>
 						<div class="exampleTask">
 							<p>Сколько слов длины 5, начинающихся с гласной буквы, можно составить из букв Е, Г, Э?
 								Каждая
@@ -139,32 +322,12 @@
 							</p>
 						</div>
 					</div>
-
-					<div class="col s12 m6 l6 xl6">
-						<p class="header__input">Необходимые параметры</p>
-						<div class="bar"></div>
-
-						<p>Длина слова</p>
-						<input class="inputParameters" type="number" name="" id="" placeholder="От" min="" max="">
-						<input class="inputParameters" type="number" name="" id="" placeholder="До" min="" max="">
-
-						<p>Количество букв</p>
-						<input class="inputParameters" type="number" name="" id="" placeholder="От" min="" max="">
-						<input class="inputParameters" type="number" name="" id="" placeholder="До" min="" max="">
-
-						<p>Количество задач</p>
-						<input class="inputParameters" type="number" name="" placeholder="Количество" id="" min=""
-							max="">
-
-					</div>
 				</div>
 			</div>
-		</div>
 
 
-
-
-	</div>
+		</div> <!-- container -->
+	</div> <!--  content-wrapper -->
 
 	<script type="text/javascript" src="./script/materialize.min.js"></script>
 	<script type="text/javascript" src="./script/index.js"></script>

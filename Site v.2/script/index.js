@@ -12,20 +12,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	introButton.addEventListener('click', function (event) {
 		event.preventDefault()
-		document.getElementById("introPage").classList.add('hide');
-		document.getElementById("slideBar").classList.remove('hide');
+		document.getElementById('wrapper').classList.remove('content-wrapper')
+		document.getElementById('introPage').classList.add('hide');
+		document.getElementById('slideBar').classList.remove('hide');
+
 	})
 
-	//Переход от вывода параметров к начальному экрану
+	//Переход от ввода параметров к начальному экрану
 	//================================================
 	let titleInput = document.getElementById('titleInput')
 
 	titleInput.addEventListener('click', function (event) {
 		event.preventDefault()
-		document.getElementById("slideBar").classList.add('hide');
-		document.getElementById("introPage").classList.remove('hide');
+		document.getElementById('wrapper').classList.add('content-wrapper')
+		document.getElementById('slideBar').classList.add('hide');
+		document.getElementById('introPage').classList.remove('hide');
 	})
 
+	//Переход от ввода параметров к результату
+	//========================================
+
+	let doGenerateButton = document.getElementById('doGenerateButton')
+
+	doGenerateButton.addEventListener('click', function (event) {
+		event.preventDefault()
+		document.getElementById('slideBar').classList.add('hide');
+		document.getElementById('resultPage').classList.remove('hide');
+	})
 
 
 	//Глобальный объект данных
