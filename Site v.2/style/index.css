@@ -29,7 +29,7 @@ h1{
 .intro__button {
     border: 2px solid #fff;
     color: #fff; 
-    background: #1c8af9
+    background: #1c8af9;
     text-decoration: none;
     text-transform: uppercase;
     
@@ -43,6 +43,8 @@ h1{
 .intro__button:hover {
 	color: #1c8af9;
 	background: #fff;
+
+    cursor: pointer;
 }
 
 .title {
@@ -106,6 +108,8 @@ h1{
 .choice__button:hover {
 	color: #1c8af9;
 	background: #fff;
+
+    cursor: pointer;
 }
 
 

@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function () {
 
 
@@ -8,9 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	// Переход от начального экрана к вводу параметров
 	//================================================
-	let introButton = document.getElementById('introButton')
 
-	introButton.addEventListener('click', function (event) {
+	document.getElementById('introButton').addEventListener('click', event => {
 		event.preventDefault()
 		document.getElementById('wrapper').classList.remove('content-wrapper')
 		document.getElementById('introPage').classList.add('hide');
@@ -20,9 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	//Переход от ввода параметров к начальному экрану
 	//================================================
-	let titleInput = document.getElementById('titleInput')
 
-	titleInput.addEventListener('click', function (event) {
+	document.getElementById('titleInput').addEventListener('click', event => {
 		event.preventDefault()
 		document.getElementById('wrapper').classList.add('content-wrapper')
 		document.getElementById('slideBar').classList.add('hide');
@@ -32,17 +31,29 @@ document.addEventListener('DOMContentLoaded', function () {
 	//Переход от ввода параметров к результату
 	//========================================
 
-	let doGenerateButton = document.getElementById('doGenerateButton')
-
-	doGenerateButton.addEventListener('click', function (event) {
+	document.getElementById('doGenerateButton').addEventListener('click', event => {
 		event.preventDefault()
+
+		// Берем значения из объекта, генерируем задания, добавляем в pageResult
+
 		document.getElementById('slideBar').classList.add('hide');
 		document.getElementById('resultPage').classList.remove('hide');
+	})
+
+	//Переход от результата к начальному экрану
+	//================================================
+
+	document.getElementById('titleResult').addEventListener('click', event => {
+		event.preventDefault()
+		document.getElementById('wrapper').classList.add('content-wrapper')
+		document.getElementById('resultPage').classList.add('hide');
+		document.getElementById('introPage').classList.remove('hide');
 	})
 
 
 	//Глобальный объект данных
 	//========================
+
 	let data = {
 		firstType: {
 			minLength: 0,
@@ -69,75 +80,46 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	}
 
-	// document.getElementById('firstType__minLenght').addEventListener('change', event => {
-	// 	// console.log(event.target.value)
-	// 	if (event.target.value > 0) {
-	// 		console.log(data.firstType)
-	// 		data.firstType.minLength = event.target.value
-	// 		console.log(data.firstType)
-
-	// 	} else {
-
-	// 	}
-	// })
-
-	// ==========  
-	// Первый тип 
-	// ========== 
-
-	// Ввод значений для задач первого типа
+	// Ввод параметров для первого типа 
 	//=====================================
-	// let firstType_nextButton = document.getElementById('firstType_nextButton')
-	// firstType_nextButton.addEventListener('click', function (event) {
-	// 	event.preventDefault()
 
-	// 	let isChoice = document.getElementById('isChoice').querySelector('input')
-	// 	if (isChoice.checked) {
-	// 		data.firstType.minLength = document.getElementById('firstType__minLenght').value
-	// 		data.firstType.maxLength = document.getElementById('firstType__maxLenght').value
+	let isSaveFirstType = false
 
-	// 		data.firstType.minCountLetters = document.getElementById('firstType__minCountLetters').value
-	// 		data.firstType.maxCountLetters = document.getElementById('firstType__maxCountLetters').value
+	document.getElementById('chooseFirstType').addEventListener('click', event => {
+		if (!isSaveFirstType) {
+			//Поменять цвет
+			document.getElementById('chooseFirstType').style.background = '#fff'
+			document.getElementById('chooseFirstType').style.color = '#1c8af9'
 
-	// 		data.firstType.minPlaceWord = document.getElementById('firstType__minPlaceWord').value
-	// 		data.firstType.maxPlaceWord = document.getElementById('firstType__maxPlaceWord').value
+			isSaveFirstType = true
+			let minLength = document.getElementById('minLength').value
+			let maxLength = document.getElementById('maxLength').value
 
-	// 		data.firstType.countTasks = document.getElementById('firstType__countTasks').value
-	// 	}
+			let minCountLetters = document.getElementById('minCountLetters').value
+			let maxCountLetters = document.getElementById('maxCountLetters').value
 
+			let minPlaceWord = document.getElementById('minPlaceWord').value
+			let maxPlaceWord = document.getElementById('maxPlaceWord').value
 
-	// console.log(data.firstType)
-	// // Проверка вводимых значения для первого типа
-	// if (data.firstType.countTasks != 0) {
-	// 	alert('Thats correct')
-	// }
+			let countTasks = document.getElementById('countTasks').value
+		} else {
+			document.getElementById('chooseFirstType').style.background = '#1c8af9'
+			document.getElementById('chooseFirstType').style.color = '#fff'
+
+			isSaveFirstType = false
+
+			data.firstType.minLength = 0
+			data.firstType.maxLength = 0
+
+			data.firstType.minCountLetters = 0
+			data.firstType.maxCountLetters = 0
+
+			data.firstType.minPlaceWord = 0
+			data.firstType.maxPlaceWord = 0
+
+			data.firstType.countTasks = 0
+		}
+
+	})
+
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

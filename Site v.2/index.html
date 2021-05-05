@@ -26,7 +26,7 @@
 			</div>
 
 			<div id="slideBar" class="hide">
-				<a href="#" class="title flow-text" id="titleInput">Комбинаторные задачи</a>
+				<a href="#" class="title" id="titleInput">Комбинаторные задачи</a>
 				<div class="bar"></div>
 				<!-- Прокрутка -->
 				<div class="row">
@@ -66,25 +66,31 @@
 							<div class="bar"></div>
 
 							<p>Длина слова</p>
-							<input class="inputParameters" type="number" id="" placeholder="От" min="3" max="6">
-							<input class="inputParameters" type="number" id="" placeholder="До" min="3" max="6">
+							<input class="inputParameters" type="number" id="minLength" placeholder="От" min="3" max="6"
+								autocomplete="off">
+							<input class="inputParameters" type="number" id="maxLength" placeholder="До" min="3" max="6"
+								autocomplete="off">
 
 							<p>Количество букв</p>
-							<input class="inputParameters" type="number" id="" placeholder="От" min="" max="">
-							<input class="inputParameters" type="number" id="" placeholder="До" min="" max="">
+							<input class="inputParameters" type="number" id="minCountLetters" placeholder="От" min="4"
+								max="8" autocomplete="off">
+							<input class="inputParameters" type="number" id="maxCountLetters" placeholder="До" min="4"
+								max="8" autocomplete="off">
 
 							<p>Место слова</p>
-							<input class="inputParameters" type="number" id="" placeholder="От" min="" max="">
-							<input class="inputParameters" type="number" id="" placeholder="До" min="" max="">
+							<input class="inputParameters" type="number" id="minPlaceWord" placeholder="От" min="10"
+								max="" autocomplete="off">
+							<input class="inputParameters" type="number" id="maxPlaceWord" placeholder="До" min="10"
+								max="" autocomplete="off">
 
 							<p>Количество задач</p>
-							<input class="inputParameters" type="number" name="" placeholder="Количество" id="" min=""
-								max="">
+							<input class="inputParameters" type="number" name="" placeholder="Количество"
+								id="countTasks" min="1" max="100">
 
 
 							<div class="row">
 								<div class="col s12 m12 l12 xl12">
-									<div class="choice__button center-align" id="choiceFirstType">Выбрать этот тип</div>
+									<div class="choice__button center-align" id="chooseFirstType">Выбрать этот тип</div>
 								</div>
 							</div>
 						</div>
@@ -131,7 +137,7 @@
 
 							<div class="row">
 								<div class="col s12 m12 l12 xl12">
-									<div class="choice__button center-align" id="choiceSecondType">Выбрать этот тип
+									<div class="choice__button center-align" id="chooseSecondType">Выбрать этот тип
 									</div>
 								</div>
 							</div>
@@ -174,7 +180,7 @@
 
 							<div class="row">
 								<div class="col s12 m12 l12 xl12">
-									<div class="choice__button center-align" id="choiceThirdType">Выбрать этот тип</div>
+									<div class="choice__button center-align" id="chooseThirdType">Выбрать этот тип</div>
 								</div>
 							</div>
 
@@ -189,8 +195,10 @@
 			</div>
 
 			<div class="result hide" id="resultPage">
+				<a href="#" class="title" id="titleResult">Комбинаторные задачи</a>
+				<div class="bar"></div>
 				<div class="row">
-					<div class="col s12 m6 l6 xl4">
+					<div class="col s12 m6 l6 xl4 flow-text">
 						<div class="exampleTask">
 							<p>Сколько слов длины 5, начинающихся с гласной буквы, можно составить из букв Е, Г, Э?
 								Каждая
