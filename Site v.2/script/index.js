@@ -87,9 +87,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	document.getElementById('chooseFirstType').addEventListener('click', event => {
 		if (!isSaveFirstType) {
-			//Поменять цвет
-			document.getElementById('chooseFirstType').style.background = '#fff'
-			document.getElementById('chooseFirstType').style.color = '#1c8af9'
+			document.getElementById('chooseFirstType').classList.add('active__button');
+			document.getElementById('chooseFirstType').classList.remove('choice__button');
 
 			isSaveFirstType = true
 			let minLength = document.getElementById('minLength').value
@@ -102,9 +101,15 @@ document.addEventListener('DOMContentLoaded', function () {
 			let maxPlaceWord = document.getElementById('maxPlaceWord').value
 
 			let countTasks = document.getElementById('countTasks').value
+
+
+
+
+
+
 		} else {
-			document.getElementById('chooseFirstType').style.background = '#1c8af9'
-			document.getElementById('chooseFirstType').style.color = '#fff'
+			document.getElementById('chooseFirstType').classList.add('choice__button');
+			document.getElementById('chooseFirstType').classList.remove('active__button');
 
 			isSaveFirstType = false
 
