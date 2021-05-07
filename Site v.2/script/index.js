@@ -1,13 +1,104 @@
+let checkAdditionalParameters = (element, min, max, defaultValue) => {
+	element.addEventListener('change', e => {
+		let value = e.target.value
+		value = Number.parseInt(value)
+		if (value > max) {
+			e.target.value = defaultValue
+			return
+		}
+		if (value < min) {
+			e.target.value = defaultValue
+			return
+		}
+	})
+}
+
+let checkParameters = (element, min, max) => {
+	element.addEventListener('change', e => {
+		let value = e.target.value
+		value = Number.parseInt(value)
+		if (value > max) {
+			e.target.value = max
+			return
+		}
+		if (value < min) {
+			e.target.value = min
+			return
+		}
+	})
+}
+
+let inputCount = (element, isChoose) => {
+	element.addEventListener('click', e => {
+		if (!isChoose) {
+			element.classList.add('active__button');
+			element.classList.remove('choice__button');
+
+			isChoose = true
+
+		} else {
+			element.classList.add('choice__button');
+			element.classList.remove('active__button');
+
+			isChoose = false
+		}
+	})
+}
+
 
 document.addEventListener('DOMContentLoaded', function () {
 
+	let minLength = document.getElementById('minLength')
+	let maxLength = document.getElementById('maxLength')
+	let countTasksFirstType = document.getElementById('countTasksFirstType')
+
+	checkAdditionalParameters(minLength, 3, 6, 3)
+	checkAdditionalParameters(maxLength, 3, 6, 6)
+	checkParameters(countTasksFirstType, 0, 100)
+
+	//Объект параметров для всех типов
+	//================================
+
+	let data = {
+		firstType: {
+			minLength: 3,
+			maxLength: 6,
+			minCountLetters: 4,
+			maxCountLetters: 8,
+			minPlaceWord: 10,
+			maxPlaceWord: 262144,
+			countTasks: 0
+		},
+		secondType: {
+			minLength: 0,
+			maxLength: 0,
+			minCountLetters: 0,
+			maxCountLetters: 0,
+			countTasks: 0
+		},
+		thirdType: {
+			minLength: 0,
+			maxLength: 0,
+			minCountLetters: 0,
+			maxCountLetters: 0,
+			countTasks: 0
+		}
+	}
+
+
+	//Инициализация для materialize
+	//=============================
 
 	let el = document.querySelector(".tabs")
 	let instance = M.Tabs.init(el)
 	// не робит
 	// let instance = M.Tabs.init(el, { swipeable: true })
 
-	// Переход от начального экрана к вводу параметров
+
+
+
+
+	//Переход от начального экрана к вводу параметров
 	//================================================
 
 	document.getElementById('introButton').addEventListener('click', event => {
@@ -51,80 +142,28 @@ document.addEventListener('DOMContentLoaded', function () {
 	})
 
 
-	//Глобальный объект данных
-	//========================
+	//Ввод количества задача первого типа  
+	//===================================
 
-	let data = {
-		firstType: {
-			minLength: 0,
-			maxLength: 0,
-			minCountLetters: 0,
-			maxCountLetters: 0,
-			minPlaceWord: 0,
-			maxPlaceWord: 0,
-			countTasks: 0
-		},
-		secondType: {
-			minLength: 0,
-			maxLength: 0,
-			minCountLetters: 0,
-			maxCountLetters: 0,
-			countTasks: 0
-		},
-		thirdType: {
-			minLength: 0,
-			maxLength: 0,
-			minCountLetters: 0,
-			maxCountLetters: 0,
-			countTasks: 0
-		}
-	}
+	let isChooseFirstType = false
+	let chooseFirstTypeButton = document.getElementById('chooseFirstTypeButton')
 
-	// Ввод параметров для первого типа 
-	//=====================================
+	inputCount(chooseFirstTypeButton, isChooseFirstType)
 
-	let isSaveFirstType = false
+	//Ввод количества задача второго типа
+	//===================================
 
-	document.getElementById('chooseFirstType').addEventListener('click', event => {
-		if (!isSaveFirstType) {
-			document.getElementById('chooseFirstType').classList.add('active__button');
-			document.getElementById('chooseFirstType').classList.remove('choice__button');
+	let isChooseSecondType = false
+	let chooseSecondTypeButton = document.getElementById('chooseSecondTypeButton')
 
-			isSaveFirstType = true
-			let minLength = document.getElementById('minLength').value
-			let maxLength = document.getElementById('maxLength').value
+	inputCount(chooseSecondTypeButton, isChooseSecondType)
 
-			let minCountLetters = document.getElementById('minCountLetters').value
-			let maxCountLetters = document.getElementById('maxCountLetters').value
+	//Ввод количества задача третьего типа
+	//====================================
 
-			let minPlaceWord = document.getElementById('minPlaceWord').value
-			let maxPlaceWord = document.getElementById('maxPlaceWord').value
+	let isChooseThirdType = false
+	let chooseThirdTypeButton = document.getElementById('chooseThirdTypeButton')
 
-			let countTasks = document.getElementById('countTasks').value
-
-
-
-
-
-
-		} else {
-			document.getElementById('chooseFirstType').classList.add('choice__button');
-			document.getElementById('chooseFirstType').classList.remove('active__button');
-
-			isSaveFirstType = false
-
-			data.firstType.minLength = 0
-			data.firstType.maxLength = 0
-
-			data.firstType.minCountLetters = 0
-			data.firstType.maxCountLetters = 0
-
-			data.firstType.minPlaceWord = 0
-			data.firstType.maxPlaceWord = 0
-
-			data.firstType.countTasks = 0
-		}
-
-	})
+	inputCount(chooseThirdTypeButton, isChooseThirdType)
 
 })

@@ -38,7 +38,8 @@ h1{
     background: #1c8af9;
     text-decoration: none;
     text-transform: uppercase;
-    
+    cursor: pointer;
+
     padding: 5px 10px; 
     margin-top: 5px;
     display: inline-block;
@@ -80,6 +81,14 @@ h1{
     text-transform: uppercase;
 }
 
+summary {
+    outline: 0;
+}
+
+summary:hover {
+    cursor: pointer;
+}
+
 .bar {
     height: 2px;
     background: #fff;
@@ -95,7 +104,7 @@ h1{
     width: 40% !important;
     
     padding-left: 5px !important;
-    margin: 2px 0 8px 0 !important;    
+    margin: 2px 5px 8px 0px !important;    
 }
 
 .choice__button {
@@ -104,6 +113,7 @@ h1{
     background: #1c8af9;
     text-decoration: none;
     text-transform: uppercase;
+    cursor: pointer;
     
     width: 100%;
     padding: 5px 10px; 
@@ -126,6 +136,7 @@ h1{
     background: #fff;
     text-decoration: none;
     text-transform: uppercase;
+    cursor: pointer;
     
     width: 100%;
     padding: 5px 10px; 
