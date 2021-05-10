@@ -36,24 +36,119 @@ let checkParameters = (element, min, max) => {
 	})
 }
 
-let changeChooseButton = (element, isChoose) => {
-	element.addEventListener('click', e => {
-		if (!isChoose) {
-			element.classList.add('active__button');
-			element.classList.remove('choice__button');
-
-			isChoose = true
-		} else {
-			element.classList.add('choice__button');
-			element.classList.remove('active__button');
-
-			isChoose = false
-		}
-		return isChoose
-	})
-	return isChoose
+let checkIsNaN = (element) => {
+	if (Number.isNaN(Number.parseInt(element))) {
+		return true
+	}
+	return false
 }
 
+//Генерация данных для задач
+//==========================
+
+//Первый тип
+//==========
+
+let getDataFirstType = () => {
+
+}
+
+//Второй тип
+//==========
+
+let getDataSecondType = () => {
+
+}
+
+//Третий тип
+//==========
+
+
+let getDataThirdType = (data) => {
+	let letters = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'И', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ы', 'Э', 'Ю', 'Я']
+
+	let length = Math.floor(data.thirdType.minLength + (Math.random() * 100) % (data.thirdType.maxLength - data.thirdType.minLength + 1))
+	let countThird = Math.floor(data.thirdType.minCountLetters + (Math.random() * 100) % (data.thirdType.maxCountLetters - data.thirdType.minCountLetters + 1))
+	let sound = Math.floor(0 + (Math.random() * 100) % (1 - 0 + 1))
+
+	if (sound === 1) {
+		sound = 'согласной'
+	} else {
+		sound = 'гласной'
+	}
+
+	let stringThird = ''
+	let x = 29
+	for (let i = 1; i <= countThird; i++) {
+		let letterThird = Math.floor(0 + (Math.random() * 100) % (x - 0 + 1))
+		if (i === 1) {
+			stringThird += letters[letterThird]
+			letters.splice(letterThird, 1)
+		} else {
+			stringThird += ', ' + letters[letterThird]
+			letters.splice(letterThird, 1)
+		}
+		x--
+	}
+
+	return {
+		length: length,
+		sound: sound,
+		stringThird: stringThird
+	}
+}
+
+
+//Генерация текстов для задач
+//===========================
+
+//Первый тип
+//==========
+
+let getTextFirstType = (dataFirstType) => {
+	return `
+	<div class="task">
+		<p>Все ${dataFirstType.length}-буквенные слова, составленные из букв ${dataFirstType.text}записаны в алфавитном порядке и пронумерованы. Вот начало списка:</p>
+		${dataFirstType.examples}
+		<p>……</p>
+		<p>Запишите слово, которое стоит на ${dataFirstType.placeWord}-м месте от начала списка.</p>
+		<div class="bar"></div>
+		Ответ:
+	</div>
+	`
+}
+
+//Второй тип
+//==========
+
+let getTextSecondType = (dataSecondType) => {
+	return `
+	<div class="task">
+		<p>Все ${dataSecondType.length}-буквенные слова, составленные из ${dataSecondType.count} букв ${dataSecondType.text}записаны в алфавитном порядке.
+		Вот начало списка:
+		${dataSecondType.examples}
+		……
+		На каком месте от начала списка стоит слово ${dataSecondType.quest}? 
+		</p>
+		<div class="bar"></div>
+		Ответ:
+	</div>
+	`
+}
+
+//Третий тип
+//==========
+
+let getTextThirdType = (dataThirdType) => {
+	return `
+	<div class="col s12 m6 l6 xl4 task">
+		<p>Сколько слов длины ${dataThirdType.length}, начинающихся с ${dataThirdType.sound} буквы, можно составить из букв ${dataThirdType.stringThird}? Каждая буква может входить в слово несколько раз. Слова не обязательно должны быть осмысленными словами русского языка.
+		</p>
+		<div class="bar"></div>
+		Ответ:
+	</div>
+	`
+}
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -71,17 +166,17 @@ document.addEventListener('DOMContentLoaded', function () {
 			countTasks: 0
 		},
 		secondType: {
-			minLength: 0,
-			maxLength: 0,
-			minCountLetters: 0,
-			maxCountLetters: 0,
+			minLength: 3,
+			maxLength: 6,
+			minCountLetters: 4,
+			maxCountLetters: 8,
 			countTasks: 0
 		},
 		thirdType: {
-			minLength: 0,
-			maxLength: 0,
-			minCountLetters: 0,
-			maxCountLetters: 0,
+			minLength: 3,
+			maxLength: 6,
+			minCountLetters: 2,
+			maxCountLetters: 4,
 			countTasks: 0
 		}
 	}
@@ -119,18 +214,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		document.getElementById('introPage').classList.remove('hide');
 	})
 
-	// //Переход от ввода параметров к результату
-	// //========================================
-
-	// document.getElementById('doGenerateButton').addEventListener('click', event => {
-	// 	event.preventDefault()
-
-	// 	// Берем значения из объекта, генерируем задания, добавляем в pageResult
-
-	// 	document.getElementById('slideBar').classList.add('hide');
-	// 	document.getElementById('resultPage').classList.remove('hide');
-	// })
-
 	//Переход от результата к начальному экрану
 	//================================================
 
@@ -141,8 +224,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		document.getElementById('introPage').classList.remove('hide');
 	})
 
-	//Изменение кнопки выбора задачи
-	//==============================
+	//Выбор задачи
+	//============
 
 	//Первый тип
 	//==========
@@ -150,7 +233,29 @@ document.addEventListener('DOMContentLoaded', function () {
 	let isChooseFirstType = false
 	let chooseFirstTypeButton = document.getElementById('chooseFirstTypeButton')
 
-	isChooseFirstType = changeChooseButton(chooseFirstTypeButton, isChooseFirstType)
+	let countTasksFirstType = document.getElementById('countTasksFirstType')
+
+	chooseFirstTypeButton.addEventListener('click', e => {
+		if (!isChooseFirstType) {
+			if (checkIsNaN(countTasksFirstType.value)) {
+				//Потом добавить блок для ошибок
+				console.log('Введите количество задач первого типа')
+			} else {
+				data.firstType.countTasks = Number.parseInt(countTasksFirstType.value)
+				isChooseFirstType = true
+
+				chooseFirstTypeButton.classList.add('active__button');
+				chooseFirstTypeButton.classList.remove('choice__button');
+			}
+		} else {
+			data.firstType.countTasks = 0
+			countTasksFirstType.value = ""
+			isChooseFirstType = false
+
+			chooseFirstTypeButton.classList.remove('active__button');
+			chooseFirstTypeButton.classList.add('choice__button');
+		}
+	})
 
 	//Второй тип
 	//==========
@@ -158,8 +263,29 @@ document.addEventListener('DOMContentLoaded', function () {
 	let isChooseSecondType = false
 	let chooseSecondTypeButton = document.getElementById('chooseSecondTypeButton')
 
-	isChooseSecondType = changeChooseButton(chooseSecondTypeButton, isChooseSecondType)
+	let countTasksSecondType = document.getElementById('countTasksSecondType')
 
+	chooseSecondTypeButton.addEventListener('click', e => {
+		if (!isChooseSecondType) {
+			if (checkIsNaN(countTasksSecondType.value)) {
+				//Потом добавить блок для ошибок
+				console.log('Введите количество задач второго типа')
+			} else {
+				data.secondType.countTasks = Number.parseInt(countTasksSecondType.value)
+				isChooseSecondType = true
+
+				chooseSecondTypeButton.classList.add('active__button');
+				chooseSecondTypeButton.classList.remove('choice__button');
+			}
+		} else {
+			data.secondType.countTasks = 0
+			countTasksSecondType.value = ""
+			isChooseSecondType = false
+
+			chooseSecondTypeButton.classList.remove('active__button');
+			chooseSecondTypeButton.classList.add('choice__button');
+		}
+	})
 
 	//Третий тип
 	//==========
@@ -167,7 +293,29 @@ document.addEventListener('DOMContentLoaded', function () {
 	let isChooseThirdType = false
 	let chooseThirdTypeButton = document.getElementById('chooseThirdTypeButton')
 
-	isChooseThirdType = changeChooseButton(chooseThirdTypeButton, isChooseThirdType)
+	let countTasksThirdType = document.getElementById('countTasksThirdType')
+
+	chooseThirdTypeButton.addEventListener('click', e => {
+		if (!isChooseThirdType) {
+			if (checkIsNaN(countTasksThirdType.value)) {
+				//Потом добавить блок для ошибок
+				console.log('Введите количество задач третьего типа')
+			} else {
+				data.thirdType.countTasks = Number.parseInt(countTasksThirdType.value)
+				isChooseThirdType = true
+
+				chooseThirdTypeButton.classList.add('active__button');
+				chooseThirdTypeButton.classList.remove('choice__button');
+			}
+		} else {
+			data.thirdType.countTasks = 0
+			countTasksThirdType.value = ""
+			isChooseThirdType = false
+
+			chooseThirdTypeButton.classList.remove('active__button');
+			chooseThirdTypeButton.classList.add('choice__button');
+		}
+	})
 
 
 	//Проверка диапазона вводимых параметров
@@ -184,8 +332,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	let minPlaceWordFirstType = document.getElementById('minPlaceWordFirstType')
 	let maxPlaceWordFirstType = document.getElementById('maxPlaceWordFirstType')
-
-	let countTasksFirstType = document.getElementById('countTasksFirstType')
 
 	checkAdditionalParameters(minLengthFirstType, 3, 6, 3)
 	checkAdditionalParameters(maxLengthFirstType, 3, 6, 6)
@@ -207,7 +353,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	let minCountLettersSecondType = document.getElementById('minCountLettersSecondType')
 	let maxCountLettersSecondType = document.getElementById('maxCountLettersSecondType')
 
-	let countTasksSecondType = document.getElementById('countTasksSecondType')
+
 
 	checkAdditionalParameters(minLengthSecondType, 3, 6, 3)
 	checkAdditionalParameters(maxLengthSecondType, 3, 6, 6)
@@ -226,7 +372,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	let minCountLettersThirdType = document.getElementById('minCountLettersThirdType')
 	let maxCountLettersThirdType = document.getElementById('maxCountLettersThirdType')
 
-	let countTasksThirdType = document.getElementById('countTasksThirdType')
+
 
 	checkAdditionalParameters(minLengthThirdType, 3, 6, 3)
 	checkAdditionalParameters(maxLengthThirdType, 3, 6, 6)
@@ -236,24 +382,56 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	checkParameters(countTasksThirdType, 0, 100)
 
-	//Проверка на правильность заполнения форм и генерация
-	//====================================================
+	//Генерация задач
+	//===============
 
 	document.getElementById('doGenerateButton').addEventListener('click', e => {
-		console.log(isChooseFirstType)
+		//Посмотреть возможность добавления помощника подкрутки до заголовков  
+		// document.getElementById('tasks').innerHTML = ""
+		// Генерация задач для первого типа
+		//=================================
 		if (isChooseFirstType) {
-			let test = Number.parseInt(countTasksFirstType.value)
-			console.log(test)
-			if (Number.isNaN(test)) {
-				console.log('vvedite kolvo 1 type')
+			document.getElementById('resultFirstType').classList.remove('hide');
+
+			for (let c = 1; c <= data.firstType.countTasks; c++) {
+				let dataFirstType = getDataFirstType()
+				let textFirstType = getTextFirstType(dataFirstType)
+
+				document.getElementById('resultFirstType') += textFirstType
 			}
 		}
+
+		// Генерация задач для второго типа
+		//=================================
 		if (isChooseSecondType) {
+			document.getElementById('resultSecondType').classList.remove('hide');
 
+			for (let c = 1; c <= data.secondType.countTasks; c++) {
+				let dataSecondType = getDataSecondType()
+				let textSecondType = getTextSecondType(dataSecondType)
+
+				document.getElementById('resultSecondType') += textSecondType
+			}
 		}
+
+		// Генерация задач для третьего типа
+		//==================================
 		if (isChooseThirdType) {
+			document.getElementById('resultThirdType').classList.remove('hide')
 
+			for (let c = 1; c <= data.thirdType.countTasks; c++) {
+				let dataThirdType = getDataThirdType(data)
+				let textThirdType = getTextThirdType(dataThirdType)
+
+				document.getElementById('thirdTasks').innerHTML += textThirdType
+			}
 		}
+
+		//Переход от ввода параметров к результату
+		//========================================
+
+		document.getElementById('slideBar').classList.add('hide')
+		document.getElementById('resultPage').classList.remove('hide')
 	})
 
 

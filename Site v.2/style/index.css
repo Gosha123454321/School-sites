@@ -146,4 +146,11 @@ summary:hover {
     transition: background .2s linear, color .2s linear;
 }
 
+.task {
+    border: solid 2px #fff;
+    background: #1c8af9;
+
+    padding: 5px;
+    margin-bottom: 10px;
+}
 
