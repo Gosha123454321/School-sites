@@ -372,8 +372,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	let minCountLettersThirdType = document.getElementById('minCountLettersThirdType')
 	let maxCountLettersThirdType = document.getElementById('maxCountLettersThirdType')
 
-
-
 	checkAdditionalParameters(minLengthThirdType, 3, 6, 3)
 	checkAdditionalParameters(maxLengthThirdType, 3, 6, 6)
 
