@@ -65,30 +65,44 @@ let getDataSecondType = () => {
 
 
 let getDataThirdType = (data) => {
-	let letters = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'И', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ы', 'Э', 'Ю', 'Я']
+	let stringThird = ''
+
+	let lettersSogl = ['Б', 'В', 'Г', 'Д', 'Ж', 'З', 'К', 'Л', 'М', 'Н', 'П', 'Р', 'С', 'Т', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ']
+	let lettersGlas = ['А','Е', 'И','О', 'У', 'Ы', 'Э', 'Ю', 'Я']
 
 	let length = Math.floor(data.thirdType.minLength + (Math.random() * 100) % (data.thirdType.maxLength - data.thirdType.minLength + 1))
 	let countThird = Math.floor(data.thirdType.minCountLetters + (Math.random() * 100) % (data.thirdType.maxCountLetters - data.thirdType.minCountLetters + 1))
 	let sound = Math.floor(0 + (Math.random() * 100) % (1 - 0 + 1))
 
+	let countSogl = 20
+	let countGlas = 9
+
 	if (sound === 1) {
 		sound = 'согласной'
+
+		let letterThird = Math.floor(0 + (Math.random() * 100) % (countSogl - 0 + 1))
+		stringThird += lettersGlas[letterThird]
+		lettersSogl.splice(letterThird, 1)
+
+		countSogl--;
 	} else {
 		sound = 'гласной'
+
+		let letterThird = Math.floor(0 + (Math.random() * 100) % (countGlas - 0 + 1))
+		stringThird += lettersGlas[letterThird]
+		lettersGlasn.splice(letterThird, 1)
+
+		countGlas--;
 	}
 
-	let stringThird = ''
-	let x = 29
-	for (let i = 1; i <= countThird; i++) {
+	for (let i = 1; i <= countThird - 1; i++) {
 		let letterThird = Math.floor(0 + (Math.random() * 100) % (x - 0 + 1))
-		if (i === 1) {
-			stringThird += letters[letterThird]
-			letters.splice(letterThird, 1)
-		} else {
-			stringThird += ', ' + letters[letterThird]
-			letters.splice(letterThird, 1)
-		}
-		x--
+		let whichSound = Math.floor(0 + (Math.random() * 100) % 2)
+	
+		
+		stringThird += ', ' + letters[letterThird]
+		letters.splice(letterThird, 1)
+	
 	}
 
 	return {
@@ -163,21 +177,24 @@ document.addEventListener('DOMContentLoaded', function () {
 			maxCountLetters: 8,
 			minPlaceWord: 10,
 			maxPlaceWord: 262144,
-			countTasks: 0
+			countTasks: 0,
+			isChoosen: false
 		},
 		secondType: {
 			minLength: 3,
 			maxLength: 6,
 			minCountLetters: 4,
 			maxCountLetters: 8,
-			countTasks: 0
+			countTasks: 0,
+			isChoosen: false
 		},
 		thirdType: {
 			minLength: 3,
 			maxLength: 6,
 			minCountLetters: 2,
 			maxCountLetters: 4,
-			countTasks: 0
+			countTasks: 0,
+			isChoosen: false
 		}
 	}
 
@@ -427,15 +444,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		//Переход от ввода параметров к результату
 		//========================================
-
-		document.getElementById('slideBar').classList.add('hide')
-		document.getElementById('resultPage').classList.remove('hide')
+		if (isChooseFirstType || isChooseSecondType || isChooseThirdType){
+			document.getElementById('slideBar').classList.add('hide')
+			document.getElementById('resultPage').classList.remove('hide')
+		}
+		
 	})
-
-
-
-
-
-
-
 })
