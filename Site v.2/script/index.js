@@ -65,44 +65,30 @@ let getDataSecondType = () => {
 
 
 let getDataThirdType = (data) => {
-	let stringThird = ''
-
-	let lettersSogl = ['Б', 'В', 'Г', 'Д', 'Ж', 'З', 'К', 'Л', 'М', 'Н', 'П', 'Р', 'С', 'Т', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ']
-	let lettersGlas = ['А','Е', 'И','О', 'У', 'Ы', 'Э', 'Ю', 'Я']
+	let letters = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'И', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ы', 'Э', 'Ю', 'Я']
 
 	let length = Math.floor(data.thirdType.minLength + (Math.random() * 100) % (data.thirdType.maxLength - data.thirdType.minLength + 1))
 	let countThird = Math.floor(data.thirdType.minCountLetters + (Math.random() * 100) % (data.thirdType.maxCountLetters - data.thirdType.minCountLetters + 1))
 	let sound = Math.floor(0 + (Math.random() * 100) % (1 - 0 + 1))
 
-	let countSogl = 20
-	let countGlas = 9
-
 	if (sound === 1) {
 		sound = 'согласной'
-
-		let letterThird = Math.floor(0 + (Math.random() * 100) % (countSogl - 0 + 1))
-		stringThird += lettersGlas[letterThird]
-		lettersSogl.splice(letterThird, 1)
-
-		countSogl--;
 	} else {
 		sound = 'гласной'
-
-		let letterThird = Math.floor(0 + (Math.random() * 100) % (countGlas - 0 + 1))
-		stringThird += lettersGlas[letterThird]
-		lettersGlasn.splice(letterThird, 1)
-
-		countGlas--;
 	}
 
-	for (let i = 1; i <= countThird - 1; i++) {
+	let stringThird = ''
+	let x = 29
+	for (let i = 1; i <= countThird; i++) {
 		let letterThird = Math.floor(0 + (Math.random() * 100) % (x - 0 + 1))
-		let whichSound = Math.floor(0 + (Math.random() * 100) % 2)
-	
-		
-		stringThird += ', ' + letters[letterThird]
-		letters.splice(letterThird, 1)
-	
+		if (i === 1) {
+			stringThird += letters[letterThird]
+			letters.splice(letterThird, 1)
+		} else {
+			stringThird += ', ' + letters[letterThird]
+			letters.splice(letterThird, 1)
+		}
+		x--
 	}
 
 	return {
@@ -365,7 +351,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		//Переход от ввода параметров к результату
 		//========================================
-		if (isChooseFirstType || isChooseSecondType || isChooseThirdType){
+		if (data.firstType.isChoosen || data.secondType.isChoosen || data.thirdType.isChoosen){
 			document.getElementById('slideBar').classList.add('hide')
 			document.getElementById('resultPage').classList.remove('hide')
 		}

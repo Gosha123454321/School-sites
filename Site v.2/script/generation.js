@@ -40,11 +40,13 @@ let getTextSecondType = (dataSecondType) => {
 
 let getTextThirdType = (dataThirdType) => {
 	return `
-	<div class="col s12 m6 l6 xl4 task">
-		<p>Сколько слов длины ${dataThirdType.length}, начинающихся с ${dataThirdType.sound} буквы, можно составить из букв ${dataThirdType.stringThird}? Каждая буква может входить в слово несколько раз. Слова не обязательно должны быть осмысленными словами русского языка.
-		</p>
-		<div class="bar"></div>
-		Ответ:
+	<div class="col s12 m6 l6 xl4">
+		<div class="task">
+			<p>Сколько слов длины ${dataThirdType.length}, начинающихся с ${dataThirdType.sound} буквы, можно составить из букв ${dataThirdType.stringThird}? Каждая буква может входить в слово несколько раз. Слова не обязательно должны быть осмысленными словами русского языка.
+			</p>
+			<div class="bar"></div>
+			Ответ:
+		</div>
 	</div>
 	`
 }
