@@ -154,3 +154,7 @@ summary:hover {
     margin-bottom: 10px;
 }
 
+.checkbox-white[type="checkbox"].filled-in:checked+span:not(.lever):after {
+    border: 2px solid #fff;
+    background-color: #1c8af9;
+}
