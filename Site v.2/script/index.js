@@ -1,5 +1,3 @@
-
-
 let checkIsNaN = (element) => {
 	if (Number.isNaN(Number.parseInt(element))) {
 		return true
@@ -82,6 +80,15 @@ document.addEventListener('DOMContentLoaded', function () {
 	document.getElementById('doGenerateButton').addEventListener('click', e => {
 		//Посмотреть возможность добавления помощника подкрутки до заголовков  
 
+		// Проверка необходимости генерировать ответы
+		//===========================================
+		if (document.getElementById('checkGenerateAnswers').checked) {
+			data.isGenerateAnswers = true
+		}
+		else {
+			data.isGenerateAnswers = false
+		}
+
 		// Генерация задач для первого типа
 		//=================================
 		if (data.firstType.isChoosen) {
@@ -120,13 +127,5 @@ document.addEventListener('DOMContentLoaded', function () {
 				document.getElementById('thirdTasks').innerHTML += textThirdType
 			}
 		}
-
-		//Переход от ввода параметров к результату
-		//========================================
-		if (data.firstType.isChoosen || data.secondType.isChoosen || data.thirdType.isChoosen) {
-			document.getElementById('slideBar').classList.add('hide')
-			document.getElementById('resultPage').classList.remove('hide')
-		}
-
 	})
 })

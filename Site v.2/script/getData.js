@@ -66,7 +66,9 @@ let data = {
         maxCountLetters: 4,
         countTasks: 0,
         isChoosen: false
-    }
+    },
+
+    isGenerateAnswers: false
 }
 
 //Проверка диапазона вводимых параметров
