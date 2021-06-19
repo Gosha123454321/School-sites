@@ -29,9 +29,9 @@ let getDataThirdType = (data) => {
 		sound = 'гласной'
 	}
 
-	if (data.isGenerateAnswers === true) {
+	// if (data.isGenerateAnswers === true) {
 
-	}
+	// }
 
 	let stringThird = ''
 	let x = 29

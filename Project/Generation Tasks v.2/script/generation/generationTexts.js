@@ -1,3 +1,5 @@
+let resultDiv = document.getElementById('answer')
+
 //Первый тип
 //==========
 
@@ -32,6 +34,8 @@ let getTextSecondType = (dataSecondType) => {
 //==========
 
 let getTextThirdType = (dataThirdType) => {
+
+
 	return `
 	<div class="col s12 m6 l6 xl4">
 		<div class="task">

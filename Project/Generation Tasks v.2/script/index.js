@@ -80,6 +80,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	document.getElementById('doGenerateButton').addEventListener('click', e => {
 		//Посмотреть возможность добавления помощника подкрутки до заголовков  
 
+		// document.getElementById('thirdTasks').innerHTML = ""
+
 		// Проверка необходимости генерировать ответы
 		//===========================================
 		if (document.getElementById('checkGenerateAnswers').checked) {
@@ -105,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		// Генерация задач для второго типа
 		//=================================
 		if (data.secondType.isChoosen) {
-			document.getElementById('resultSecondType').classList.remove('hide');
+			document.getElementById('resultSecondType').classList.remove('hide')
 
 			for (let c = 1; c <= data.secondType.countTasks; c++) {
 				let dataSecondType = getDataSecondType()
